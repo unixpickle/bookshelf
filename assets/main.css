@@ -1,0 +1,88 @@
+body {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#books {
+  margin: 0;
+  padding: 15px 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+@media (max-width: 340px) {
+  #books {
+    width: 170px;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 510px) {
+  #books {
+    width: 340px;
+  }
+}
+
+@media (min-width: 510px) and (max-width: 680px) {
+  #books {
+    width: 510px;
+  }
+}
+
+@media (min-width: 680px) and (max-width: 850px) {
+  #books {
+    width: 680px;
+  }
+}
+
+@media (min-width: 850px) {
+  #books {
+    width: 850px;
+  }
+}
+
+.book {
+  margin: 5px 5px;
+  float: left;
+  height: 280px;
+  width: 160px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.book .cover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: block;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 150px;
+  height: 220px;
+  background-color: white;
+}
+
+.book label {
+  display: block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  width: 150px;
+  height: 21px;
+  margin-left: 5px;
+  line-height: 21px;
+
+  font-size: 15px;
+}
+
+.book .title {
+  margin-top: 5px;
+}
+
+.book .author {
+  color: #999;
+}
