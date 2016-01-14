@@ -52,6 +52,10 @@
   height: 0px;
 }
 
+.info-popup .title {
+  font-style: italic;
+}
+
 .info-popup .description {
   display: block;
   margin: 10px 0;
