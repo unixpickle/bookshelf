@@ -30,6 +30,8 @@ window.addEventListener('load', function() {
       element.appendChild(author);
     }
 
+    element.addEventListener('click', window.showInfoPopup.bind(null, book));
+
     booksElement.appendChild(element);
   }
 });
