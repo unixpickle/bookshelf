@@ -30,8 +30,22 @@ func main() {
 
 	GlobalBooksFetcher = NewBooksFetcher(email, password)
 
+	http.HandleFunc("/thumbnail", HandleThumbnail)
 	http.HandleFunc("/", HandleRoot)
 	http.ListenAndServe(":"+os.Args[1], nil)
+}
+
+func HandleThumbnail(w http.ResponseWriter, r *http.Request) {
+	bookId := r.FormValue("bookId")
+	data, err := GlobalBooksFetcher.Thumbnail(bookId)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Header().Set("Content-Type", "text/plain")
+		w.Write([]byte(err.Error()))
+		return
+	}
+	w.Header().Set("Content-Type", "image/jpeg")
+	w.Write(data)
 }
 
 func HandleRoot(w http.ResponseWriter, r *http.Request) {

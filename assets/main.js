@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 
     var image = document.createElement('div');
     image.className = 'cover';
-    image.style.backgroundImage = 'url("' + book.imageLinks.thumbnail + '")';
+    image.style.backgroundImage = 'url("' + bookThumbnail(book) + '")';
     element.appendChild(image);
 
     var title = document.createElement('label');
@@ -40,3 +40,11 @@ window.addEventListener('load', function() {
     booksElement.appendChild(element);
   }
 });
+
+function bookThumbnail(book) {
+  if (!book.uploaded) {
+    return book.imageLinks.thumbnail + '&usc=0&w=300';
+  } else {
+    return 'thumbnail?bookId=' + book.id;
+  }
+}

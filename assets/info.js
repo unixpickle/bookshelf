@@ -6,7 +6,7 @@
 
     var image = document.createElement('img');
     image.className = 'cover';
-    image.src = book.imageLinks.thumbnail;
+    image.src = bookThumbnail(book);
     popup.appendChild(image);
 
     var title = document.createElement('label');
