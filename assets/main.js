@@ -7,9 +7,14 @@ window.addEventListener('load', function() {
     return;
   }
 
+  var sortedBooks = window.bookInfo.books.slice();
+  sortedBooks.sort(function(b1, b2) {
+    return b2.updateTime - b1.updateTime;
+  });
+
   var booksElement = document.getElementById('books');
-  for (var i = 0, len = window.bookInfo.books.length; i < len; ++i) {
-    var book = window.bookInfo.books[i];
+  for (var i = 0, len = sortedBooks.length; i < len; ++i) {
+    var book = sortedBooks[i];
     var element = document.createElement('li');
     element.className = 'book';
 
